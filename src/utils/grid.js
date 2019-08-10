@@ -31,8 +31,10 @@ export function sortElements(items) {
       }
     }
   }
+
   next(start.id)
-  let checkNotAppended = () => {
+
+  const checkNotAppended = () => {
     if (available.length === 0) return
     let notAppendedConditionTos = available.filter(x => x.type === ElementType.BRANCH)
       .reduce((cur, next) => cur.concat(next.conditions), [])
