@@ -1,24 +1,26 @@
 import uuid from 'uuid/v1'
 import { ArrowDrawer } from './drawer.js'
 import { ElementType } from './behavior.js'
-import _ from 'lodash'
+// import _ from 'lodash'
 
 
 // this method returns ALL items in order they rendered in flow
 // TODO: make use of it in MakeGrid function
 export function sortElements(items) {
-  let available = _.cloneDeep(items)
-  let rez = []
-  let start = available.find(x => x.type === ElementType.START)
-  let popElement = (id) => {
-    let els = _.remove(available, (x) => x.id === id)
+  const available = Object.assign({}, items)
+  const rez = []
+  const start = available.find(x => x.type === ElementType.START)
+
+  const popElement = (id) => {
+    const ind = available.findIndex(x => x === id)
+    if (ind === -1) return null
+    const els = available.splice(ind, 1)
     if (els.length === 0) return null
-    else if (els.length > 1) throw new Error('Multiple items with same ID error')
     return els[0]
   }
-  let next = (id) => {
-    let el = popElement(id)
-    // console.log(el)
+
+  const next = (id) => {
+    const el = popElement(id)
     if (el === null) return
     rez.push(el)
     if ([ElementType.SQUARE, ElementType.START].includes(el.type)) {
