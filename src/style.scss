@@ -170,17 +170,7 @@ $bg-color-hover: #E5F3FB;
     }
   }
   // question
-  .element {
-    .box .question {
-      border: 1px solid #bbbbbb;
-      padding: 5px;
-      min-height: 40px;
-      position: relative;
-      > span {
-        user-select: none;
-      }
-    }
-  }
+ 
 
   // &.mode-published {
   //   .overlay { width: 100%; height: 100%; background-color: #8d8d8d2e; position: absolute; top: 0; left: 0; align-items: center; justify-content: center; display: none;}

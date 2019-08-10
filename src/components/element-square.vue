@@ -1,7 +1,7 @@
 <template lang="pug">
   .element
     .box
-      .rounded(@mousedown.prevent="mousedown") End
+      .square(@mousedown.prevent="mousedown") Square
 </template>
 
 <script>
@@ -9,15 +9,14 @@ import base from './element-base.vue'
 
 export default {
   extends: base,
-  name: 'element-end',
+  name: 'element-square',
   props: ['value']
 }
 </script>
 
-<style lang="scss">
-  .element-end {
+<style >
+.element .square {
     border: 1px solid #bbbbbb;
-    border-radius: 20px;
     font-weight: bold;
     height: 40px;
     text-align: center;

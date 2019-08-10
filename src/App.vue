@@ -7,6 +7,10 @@
 import Flow from './components/Flow.vue'
 import Start from './components/element-start.vue'
 import End from './components/element-end.vue'
+import Square from './components/element-square.vue'
+import Branch from './components/element-branch.vue'
+import Condition from './components/element-condition.vue'
+import ConditionArrow from './components/element-condition-arrow.vue'
 import { data1 } from './data.js'
 
 export default {
@@ -15,7 +19,7 @@ export default {
     return {
       data: data1,
       config: {},
-      components: [Start, End]
+      components: [Start, End, Square, Branch, Condition, ConditionArrow]
     }
   },
   mounted() {
@@ -25,7 +29,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

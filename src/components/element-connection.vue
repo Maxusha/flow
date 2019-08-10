@@ -61,7 +61,7 @@
     }
   }
   .connection.top-bottom:before, .connection.bottom-top:before {
-    top: 0; left: 0; width: 50%; height: 100%; border-right: 1px solid #bbbbbb; position: absolute; content: "";
+    top: 0; left: 0; width: calc(50% - 1px); height: 100%; border-right: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.top-right:before, .connection.right-top:before  {
     top: 0; left: calc(50% - 1px); width: calc(50% + 1px); height: 10px; border-left: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb; position: absolute; content: "";
@@ -76,7 +76,7 @@
     top: 9px; left: calc(50% - 1px); width: calc(50% + 1px); height: calc(100% - 9px); border-left: 1px solid #bbbbbb; border-top: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.left-bottom:before, .connection.bottom-left:before {
-    top: 9px; left: 0; width: 50%; height: calc(100% - 9px); border-right: 1px solid #bbbbbb; border-top: 1px solid #bbbbbb; position: absolute; content: "";
+    top: 9px; left: 0; width: calc(50% - 1px); height: calc(100% - 9px); border-right: 1px solid #bbbbbb; border-top: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.arrow:after {
     width: 0px;
@@ -98,7 +98,7 @@
       min-width: 30px + ($i * 10);
     }
     // lines pad top
-    $pad-top: 9px + ($i * 10);
+    $pad-top: 10px + ($i * 10);
     .connection.right-bottom.pad-top-#{$i}:before, .connection.bottom-right.pad-top-#{$i}:before  {
       top: $pad-top;
       height: calc(100% - #{$pad-top});

@@ -21,7 +21,7 @@ export function sortElements(items) {
     // console.log(el)
     if (el === null) return
     rez.push(el)
-    if ([ElementType.QUESTION, ElementType.START].includes(el.type)) {
+    if ([ElementType.SQUARE, ElementType.START].includes(el.type)) {
       next(el.to)
     } else if (el.type === ElementType.BRANCH) {
       for (let condition of el.conditions) {
@@ -69,7 +69,7 @@ export function MakeGrid(elements) {
     if (row === undefined) return 0
     let col = row[x]
     if (col === undefined) return 0
-    if (col.find(x => x.type === ElementType.QUESTION || x.type === ElementType.BRANCH || x.type === ElementType.CONDITION) === undefined) return 0
+    if (col.find(x => x.type === ElementType.SQUARE || x.type === ElementType.BRANCH || x.type === ElementType.CONDITION) === undefined) return 0
     let check = true
     let checkY = y
     let toX = x + 2
@@ -203,7 +203,7 @@ export function MakeGrid(elements) {
         x = coords.x + 2
         // x = myX + 2 // todo: if condition has been moved then it's not 2...
       }
-    } else if (el.type === ElementType.QUESTION || el.type === ElementType.START) {
+    } else if (el.type === ElementType.SQUARE || el.type === ElementType.START) {
       if (el.to === null) return
       let next = elements.find(x => x.id === el.to)
       y = y + 2
