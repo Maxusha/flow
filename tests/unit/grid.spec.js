@@ -3,7 +3,8 @@ import { MakeGrid } from '@/utils/grid.js'
 describe('Make Grid', () => {
   it('renders props.msg when passed', () => {
     const grid = MakeGrid(data1)
-    expect(wrapper.text()).toMatch(msg)
+    // let grid = {a: 1}
+    expect(grid).not.toBeNull()
   })
 })
 
