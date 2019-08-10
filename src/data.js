@@ -21,23 +21,7 @@ export const data1 = [
       {
         id: 32,
         type: 'element-condition',
-        to: 4
-      }
-    ]
-  },
-  {
-    id: 4,
-    type: 'element-branch',
-    conditions: [
-      {
-        id: 41,
-        type: 'element-condition',
         to: 2
-      },
-      {
-        id: 42,
-        type: 'element-condition',
-        to: 1
       }
     ]
   },

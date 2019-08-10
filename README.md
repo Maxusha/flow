@@ -29,4 +29,10 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Config
+TODO
 
+### Schema rules
+Following conditions must be met by json schema:
+- It must have start and end element
+- Each element must have an ID and it must be unique
+- Element can't reference non existing element

@@ -52,6 +52,8 @@ export function sortElements(items) {
 }
 
 export function MakeGrid(elements) {
+  Validate(elements)
+
   // sets element to specific coordinates
   let appendElement = (x, y, elem) => {
     // console.log(elem)
@@ -293,3 +295,21 @@ export function MakeGrid(elements) {
   }
   return grid
 }
+
+export function Validate(elements) {
+  let hasStart = false
+  let hasEnd = false
+  const ids = new Map()
+  for (const el of elements) {
+    if (el.type === 'element-start') hasStart = true
+    if (el.type === 'element-end') hasEnd = true
+    if (el.id === undefined || el.id === null) throw Error(`Schema error. Missing element id`)
+    if (ids.has(el.id)) throw Error(`Schema error. Duplicate ids: ${el.id}. `)
+    ids.set(el.id, true)
+  }
+  for (const el of elements) {
+    if (el.to !== undefined && !ids.has(el.to)) throw Error(`Schema error. Element references non existing element`)
+  }
+  if (!hasStart) throw Error(`Schema error. "element-start" must be present.`)
+  if (!hasEnd) throw Error(`Schema error. "element-end" must be present.`)
+} 

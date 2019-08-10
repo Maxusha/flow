@@ -1,10 +1,22 @@
 import { MakeGrid } from '@/utils/grid.js'
 
 describe('Make Grid', () => {
-  it('renders props.msg when passed', () => {
+  it('Draw 1', () => {
     const grid = MakeGrid(data1)
-    // let grid = {a: 1}
-    expect(grid).not.toBeNull()
+    const start = grid[1][1][0]
+    expect(start.type).toBe('element-start')
+    const sq1 = grid[3][1][0]
+    expect(sq1.type).toBe('element-square')
+    const br1 = grid[5][1][0]
+    expect(br1.type).toBe('element-branch')
+    const cond1 = grid[5][1][1]
+    expect(cond1.type).toBe('element-condition')
+    const cond2 = grid[5][3][0]
+    expect(cond2.type).toBe('element-condition')
+    const br2 = grid[7][3][0]
+    expect(br2.type).toBe('element-branch')
+    const end = grid[9][1][0]
+    expect(end.type).toBe('element-end')
   })
 })
 
