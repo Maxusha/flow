@@ -1,9 +1,12 @@
 <template lang="pug">
-div.flow-grid
+div.flow-grid.mode-edit
   table(v-if="grid")
     tr(v-for="(row, rowInd) in grid")
       td(v-for="(col, colInd) in row")
-        component(v-for="(elem, elemInd) in col" :key="elemInd" :is="getElementComponent(elem.type)" v-model="col[elemInd]")
+        div(v-if="rowInd % 2 === 1 && colInd % 2 === 1" style="display: flex; flex-direction:column;")
+          component(v-for="(elem, elemInd) in col" :key="elemInd" :is="getElementComponent(elem.type)" v-model="col[elemInd]")
+        div(v-else)
+          component(v-for="(elem, elemInd) in col" :key="elemInd" :is="getElementComponent(elem.type)" v-model="col[elemInd]")
 </template>
 
 <script>

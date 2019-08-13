@@ -2,214 +2,74 @@ $border-color: #26A0DA;
 $bg-color: #CBE8F6;
 $border-color-hover: #70C0E7;
 $bg-color-hover: #E5F3FB;
+$distance: -19px;
 
 .flow-grid {
+  width: 1px;
+  height: 1px;
   div {
     box-sizing: border-box;
   }
   table {
     border-spacing: 0;
   }
-
-  width: 1px;
-  height: 1px;
   tr td:first-child {min-width: 0}
   tr:first-child td {min-height: 0; height: 0}
-  td { position: relative; min-height: 20px; min-width: 40px; max-width:200px; vertical-align: top; padding: 0; height: 100%; }
+  td { position: relative; height: 0; min-height: 20px; min-width: 40px; max-width:200px; vertical-align: top; padding: 0; }
 
-  // general element
-  .element.selected {
-    .action {
-      display: block;
-    }
-    .box {
-      div.question {
-        background-color: $bg-color;
-        border-color: $border-color;
-      }
-    }
-  }
-  &:not(.dragging):not(.connecting):not(.mode-view):not(.mode-published) {
-    .element .box {
-      .question:hover {
-        background-color: $bg-color-hover;
-        border-color: $border-color-hover;
-        cursor: pointer;
-        .badge-light {
-          background-color: #b6deff;
-        }
-      }
-    }
-  }
-  &.dragging {
-    .element.selected .action {
-      display: none;
-    }
-    .element.selected .action.cancel-drag-to {
-      display: block;
-    }
-  }
-  &.connecting {
-    .element.selected .action {
-      display: none;
-    }
-    .element.selected .action.cancel-lead-to {
-      display: block;
-    }
-  }
   .element {
     display: flex;
     flex-flow: column;
-    height: 100%;
-    $distance: -19px;
-    .question-info {
-      display: flex;
-      justify-content: space-between;
-    }
-    .action {
-      line-height: 18px;
-      z-index: 200;
-      cursor: pointer;
-      white-space: nowrap;
-      background: #555;
-      color: white;
-      padding: 0 6px;
-      border-radius: 10px;
-      display: none;
-      position: absolute;
-      &:hover {
-        background: black;
-      }
-      >i {
-        font-size: 14px;
-      }
-      &.delete {
-        right: 0;
-        top: #{$distance};
-      }
-      &.edit {
-        left: 0;
-        top: #{$distance};
-      }
-      &.drag {
-        left: 0;
-        bottom: #{$distance};
-      }
-      &.next {
-        left: calc(50% - 14px);
-        bottom: #{$distance};
-      }
-      &.swap-right {
-        left: calc(100% + 1px);
-        top: 7px;
-      }
-      &.swap-left {
-        right: calc(100% + 1px);
-        top: 7px;
-      }
-      &.add-branch {
-        right: 0;
-        bottom: #{$distance};
-      }
-      &.add-question {
-        right: 43px;
-        bottom: #{$distance};
-      }
-      &.cancel-lead-to {
-        display: none;
-        bottom: #{$distance};
-        left: calc(50% - 26px);
-      }
-      &.cancel-drag-to {
-        display: none;
-        bottom: #{$distance};
-        left: 0;
-      }
-    }
+    margin-top: auto;
+    // height: 100%;
     .box {
-      min-height: 40px;
+      min-height: 30px;
       min-width: 200px;
       flex: 0 1 auto;
       position: relative;
     }
     .connection-extender {
-      width: 50%;
+      width: calc(50% + 1px);
       border-right: 1px solid #bbb;
       flex: 1 1 auto;
     }
-    .warning {
-      position: absolute;
-      right: -19px;
-      top: 0;
-      color: #F7C46C;
-      z-index: 200;
-    }
-    .drop-point {
-      &:hover {
-        background: black;
-      }
-      cursor: pointer;
-      position: absolute;
-      color: white;
-      background: #555;
-      text-align: center;
-      width: 18px;
-      line-height: 18px;
-      border-radius: 10px;
-      z-index: 100;
-      left: calc(50% - 10px);
-      &.black {
-        background: black;
-      }
-      &.top {
-        top: -9px;
-      }
-      &.bottom {
-        bottom: -9px;
-      }
-    }
   }
-  // question
- 
 
-  // &.mode-published {
-  //   .overlay { width: 100%; height: 100%; background-color: #8d8d8d2e; position: absolute; top: 0; left: 0; align-items: center; justify-content: center; display: none;}
-  // }
-  // .show-graph {
-  //   width: 100px; height: 100px; background-color: red; margin-right: 20px;
-  // }
-  // &.mode-published .element:hover {
-  //   .overlay { display: flex; }
-  // }
-  // branch
-  &:not(.dragging):not(.connecting):not(.mode-view):not(.mode-published) {
-    .element.element-branch {
-      div.branch {
-        &:hover {
-          cursor: pointer;
-          .branch-text {
-            background-color: $bg-color;
-            border-color: $border-color;
-          }
-          .branch-right-triangle:before {
-            border-color: transparent transparent transparent $border-color;
-          }
-          .branch-right-triangle:after {
-            border-color: transparent transparent transparent $bg-color;
-          }
-          .branch-left-triangle:before {
-            border-color: transparent $border-color transparent transparent;
-          }
-          .branch-left-triangle:after {
-            border-color: transparent $bg-color transparent transparent;
-          }
-        }
+  // start, square, ...
+
+
+  &.mode-edit .element .box:hover{
+    cursor: pointer;
+    
+    // TODO: square, start, end
+    
+    // branch
+    .branch-text {
+      background-color: $bg-color;
+      border-color: $border-color;
+    }
+    .branch-right-triangle:before {
+      border-color: transparent transparent transparent $border-color;
+    }
+    .branch-right-triangle:after {
+      border-color: transparent transparent transparent $bg-color;
+    }
+    .branch-left-triangle:before {
+      border-color: transparent $border-color transparent transparent;
+    }
+    .branch-left-triangle:after {
+      border-color: transparent $bg-color transparent transparent;
+    }
+
+    // condition
+    div.condition:hover {
+      .condition-text {
+        background-color: $bg-color;
+        border-color: $border-color;
       }
     }
   }
-  .element.element-branch {
-    height: auto;
-  }
+
   .element.selected {
     div.branch {
       .branch-text {
@@ -228,12 +88,6 @@ $bg-color-hover: #E5F3FB;
       .branch-left-triangle:after {
         border-color: transparent $bg-color transparent transparent;
       }
-    }
-  }
-  .element-branch {
-    .width-modifier {
-      float: left;
-      min-width: 200px;
     }
   }
   .branch {
@@ -305,27 +159,14 @@ $bg-color-hover: #E5F3FB;
     border-color: transparent #bbb transparent transparent;
     border-width: 20px;
   }
-  // condition
-  .element.element-condition {
-    height: 100%;
-  }
 
-  &:not(.dragging):not(.connecting):not(.mode-view):not(.mode-published) {
-    div.condition:hover {
-      $border-color: #26A0DA;
-      $bg-color: #CBE8F6;
-      cursor: pointer;
-      .condition-text {
-        background-color: $bg-color;
-        border-color: $border-color;
-      }
-    }
-  }
+  // // condition
+  // .element.element-condition {
+  //   height: 100%;
+  // }
 
   .element.selected {
     div.condition {
-      $border-color: #26A0DA;
-      $bg-color: #CBE8F6;
       .condition-text {
         background-color: $bg-color;
         border-color: $border-color;
@@ -333,22 +174,34 @@ $bg-color-hover: #E5F3FB;
     }
   }
 
-  .condition {
-    position: relative;
+  // .element .square {
+  //   border: 1px solid #bbbbbb;
+  //   font-weight: bold;
+  //   height: 40px;
+  //   text-align: center;
+  //   padding-top: 9px;
+  // }
+
+  .box {
+    // position: relative;
     // width: 100%;
-    min-width: 200px;
-    height: auto;
-    text-align: center;
-    margin-top: 60px;
-    display: flex;
-    flex-flow: column;
+    // min-width: 200px;
+    // height: auto;
+    // text-align: center;
+    // margin-top: 20px;
+    // display: flex;
+    // flex-flow: column;
     .condition-text {
       flex: 0 1 auto;
       // >div {
+      // margin-top: 20px;
       display: inline-block;
       border: 1px solid #bbb;
       border-radius: 20px;
+      text-align: center;
       padding: 5px 12px;
+      min-width: 200px;
+
       // }
     }
     .connection-extender {

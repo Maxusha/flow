@@ -168,7 +168,6 @@ export function MakeGrid(elements) {
         // condition.branchId = el.id
         // condition.type = ElementType.CONDITION
         y = condY
-        appendElement(x, y, condition)
         if (index === 0) {
           appendElement(x, y, {
             type: ElementType.ARROW,
@@ -198,6 +197,7 @@ export function MakeGrid(elements) {
             line: 'last'
           })
         }
+        appendElement(x, y, condition)
         // let myX = x
         if (condition.to !== null) {
           let next = elements.find(x => x.id === condition.to)

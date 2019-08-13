@@ -16,11 +16,11 @@ export default {
 
 <style >
 .element .square {
-    border: 1px solid #bbbbbb;
-    font-weight: bold;
-    height: 40px;
-    text-align: center;
-    padding-top: 9px;
-    min-width: 200px;
-  }
+  border: 1px solid #bbbbbb;
+  font-weight: bold;
+  height: 40px;
+  text-align: center;
+  padding-top: 9px;
+  min-width: 200px;
+}
 </style>

@@ -1,9 +1,9 @@
 <template lang="pug">
-  .element.element-branch
-    .branch(@mousedown.prevent="mousedown")
+  .element
+    .box(@mousedown.prevent="mousedown")
       .branch-left-triangle
       .branch-right-triangle
-      .branch-text Branch
+      .branch-text {{value.text}}
     .width-modifier
 </template>
 

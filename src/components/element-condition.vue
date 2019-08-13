@@ -1,9 +1,9 @@
 <template lang="pug">
-  div.element.element-condition(@mousedown.stop="")
-    div.condition(:class="value.order")
-      div.condition-text(@mousedown.prevent="mousedown")
-        div Condition
-    div.connection-extender
+  .element.element-condition
+    .box
+      .condition-text(@mousedown.prevent="mousedown")
+        div {{value.text}}
+    .connection-extender
 </template>
 
 <script>

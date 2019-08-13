@@ -73,10 +73,10 @@
     top: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.right-bottom:before, .connection.bottom-right:before {
-    top: 9px; left: calc(50% - 1px); width: calc(50% + 1px); height: calc(100% - 9px); border-left: 1px solid #bbbbbb; border-top: 1px solid #bbbbbb; position: absolute; content: "";
+    top: 10px; left: calc(50% - 1px); width: calc(50% + 1px); height: calc(100% - 10px); border-left: 1px solid #bbbbbb; border-top: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.left-bottom:before, .connection.bottom-left:before {
-    top: 9px; left: 0; width: calc(50% - 1px); height: calc(100% - 9px); border-right: 1px solid #bbbbbb; border-top: 1px solid #bbbbbb; position: absolute; content: "";
+    top: 10px; left: 0; width: calc(50% - 1px); height: calc(100% - 10px); border-right: 1px solid #bbbbbb; border-top: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.arrow:after {
     width: 0px;

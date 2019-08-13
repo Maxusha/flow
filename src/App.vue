@@ -5,6 +5,7 @@
 
 <script>
 import Flow from './components/Flow.vue'
+
 import Start from './components/element-start.vue'
 import End from './components/element-end.vue'
 import Square from './components/element-square.vue'
