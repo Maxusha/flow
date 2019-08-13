@@ -18,14 +18,17 @@ A Vue.js component which generates diagram based on json input
   {
     id: 3,
     type: 'element-branch',
+    text: 'Do something?',
     conditions: [
       {
         id: 31,
+        text: 'Yes',
         type: 'element-condition',
         to: 1
       },
       {
         id: 32,
+        text: 'No',
         type: 'element-condition',
         to: 4
       }
@@ -34,14 +37,23 @@ A Vue.js component which generates diagram based on json input
   {
     id: 4,
     type: 'element-branch',
+    text: 'Are you sure?',
     conditions: [
       {
         id: 41,
+        text: 'Yes',
         type: 'element-condition',
-        to: 2
+        to: 1
       },
       {
         id: 42,
+        text: 'No',
+        type: 'element-condition',
+        to: 3
+      },
+      {
+        id: 43,
+        text: 'Maybe',
         type: 'element-condition',
         to: 1
       }
@@ -54,7 +66,7 @@ A Vue.js component which generates diagram based on json input
 ]
 ```
 
-![p1](https://user-images.githubusercontent.com/503539/62825789-e5c8d980-bbb9-11e9-8f03-c25dc20089f1.png)
+![flow](https://user-images.githubusercontent.com/503539/62951179-2a3eba00-bdf2-11e9-9d0e-a207913ab60f.png)
 
 ## Status
 
