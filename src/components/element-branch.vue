@@ -4,7 +4,6 @@
       .branch-left-triangle
       .branch-right-triangle
       .branch-text {{value.text}}
-    .width-modifier
 </template>
 
 <script>

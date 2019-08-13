@@ -1,8 +1,7 @@
 <template lang="pug">
-  .element.element-condition
+  .element
     .box
-      .condition-text(@mousedown.prevent="mousedown")
-        div {{value.text}}
+      .condition-text(@mousedown.prevent="mousedown") {{value.text}}
     .connection-extender
 </template>
 

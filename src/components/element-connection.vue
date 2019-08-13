@@ -1,8 +1,8 @@
 <template lang="pug">
   //- div(style="position: relative; height: 100%; display: inline-block;")
-  div(:class="classObject" class="connection")
-    div(class="height-modifier")
-    div(class="width-modifier")
+  .connection(:class="classObject")
+    .height-modifier
+    .width-modifier
 </template>
 
 <script>
