@@ -18,6 +18,9 @@ export default {
   name: 'app',
   data() {
     return {
+      // TODO: Define interface of componet. Seems overcomplicated.
+      // TODO: Customr components, conbination of behavior, validation of data based on provided component and behavior
+      // TODO: Pass behavior.
       data: data1,
       config: {},
       components: [Start, End, Square, Branch, Condition, ConditionArrow]

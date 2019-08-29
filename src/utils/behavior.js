@@ -10,7 +10,9 @@ export const ElementType = {
 
 const defaults = {
   start: false,
-  end: false
+  canLead: false,
+  canAccept: false,
+  hasChildren: false,
 }
 
 function assign(props) {
@@ -18,7 +20,10 @@ function assign(props) {
 }
 
 export const Behavior = {
-  [ElementType.START]: assign({start: true}),
-  [ElementType.END]: assign({end: true}),
-  [ElementType.SQUARE]: assign({})
+  [ElementType.START]: assign({start: true, canLead: true}),
+  [ElementType.END]: assign({canAccept: true}), // TODO: check grid to support for multiple endings?
+  [ElementType.SQUARE]: assign({canLead: true}),
+  [ElementType.BRANCH]: assign({hasChildren: true, canAccept: true}),
+  [ElementType.CONDITION]: assign({canLead: true}),
+  [ElementType.ARROW]: assign({})
 }

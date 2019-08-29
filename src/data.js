@@ -7,26 +7,33 @@ export const data1 = [
   {
     id: 2,
     type: 'element-square',
+    text: 'Box 1',
     to: 3
   },
   {
     id: 3,
     type: 'element-branch',
     text: 'Do something?',
-    conditions: [
+    conditions: [ // rename to children
       {
         id: 31,
         text: 'Yes',
         type: 'element-condition',
-        to: 1
+        to: 4
       },
       {
         id: 32,
         text: 'No',
         type: 'element-condition',
-        to: 4
+        to: 5
       }
     ]
+  },
+  {
+    id: 5,
+    type: 'element-square',
+    text: 'Box 2',
+    to: 1
   },
   {
     id: 4,

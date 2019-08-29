@@ -2,6 +2,7 @@
   .element
     .box
       .square(@mousedown.prevent="mousedown") Square
+    .connection-extender
 </template>
 
 <script>

@@ -1,6 +1,13 @@
 import uuid from 'uuid/v1'
 import { ElementType } from './behavior.js'
 
+/**
+ * x and y parameters are mutable
+ * @param {Array<Array<Array>>>} grid - Grid of elements // TODO: Find way to define this object type (TS?)
+ * @param {*} x - starting X drawing coordinate
+ * @param {*} y - starting Y drawing coordinate
+ * @returns self like object to make chain calls
+ */
 export function ArrowDrawer(grid, x, y) {
   let from = 'top'
   let to = null

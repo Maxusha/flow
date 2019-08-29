@@ -15,8 +15,8 @@ $distance: -19px;
   }
   tr td:first-child {min-width: 0}
   tr:first-child td {min-height: 0; height: 0}
-  td { position: relative; height: 0; min-height: 20px; min-width: 40px; max-width:200px; vertical-align: top; padding: 0; }
-
+  td { position: relative; min-height: 20px; height: 20px; min-width: 40px; max-width:200px; vertical-align: top; padding: 0; }
+  tr{ height: 100%; }
   .element {
     display: flex;
     flex-flow: column;

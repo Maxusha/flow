@@ -67,7 +67,7 @@
     top: 0; left: calc(50% - 1px); width: calc(50% + 1px); height: 10px; border-left: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.top-left:before {
-    top: 0; left: 0; width: 50%; height: 10px; border-right: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb; position: absolute; content: "";
+    top: 0; left: 0; width: calc(50% - 1px); height: 10px; border-right: 1px solid #bbbbbb; border-bottom: 1px solid #bbbbbb; position: absolute; content: "";
   }
   .connection.left-right:before, .connection.right-left:before {
     top: 0; left: 0; width: 100%; height: 10px; border-bottom: 1px solid #bbbbbb; position: absolute; content: "";
