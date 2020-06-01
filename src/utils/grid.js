@@ -296,7 +296,7 @@ export function MakeGrid(elements) {
   let grid = []
   let x = 1
   let y = 1
-  
+
   let start = elements.find(x => Behavior[x.type].start)
   try {
     definePosition(start)
@@ -333,4 +333,4 @@ export function Validate(elements) {
   }
   if (!hasStart) throw Error(`Schema error. "element-start" must be present.`)
   if (!hasEnd) throw Error(`Schema error. "element-end" must be present.`)
-} 
+}

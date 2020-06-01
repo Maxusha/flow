@@ -48,7 +48,7 @@
   }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .connection {
     // float: left;
     .width-modifier {
