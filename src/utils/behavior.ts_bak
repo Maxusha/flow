@@ -8,22 +8,40 @@ export const ElementType = {
   ARROW: 'element-condition-arrow'
 }
 
+export interface IElementBehavior {
+  start: boolean
+  canLead: boolean
+  canAccept: boolean
+  sameRow: boolean
+}
+
+export interface IElementBehaviorProps {
+  start?: boolean
+  canLead?: boolean
+  canAccept?: boolean
+  sameRow?: boolean
+}
+
 const defaults = {
   start: false,
   canLead: false,
   canAccept: false,
-  hasChildren: false,
+  sameRow: false,
 }
 
-function assign(props) {
-  return Object.assign({}, defaults, props)
+function assign(props: IElementBehaviorProps): IElementBehavior {
+  return { ...defaults, ...props}
+}
+
+export type BehaviorProps = {
+  [key: string]: IElementBehavior
 }
 
 export const Behavior = {
   [ElementType.START]: assign({start: true, canLead: true}),
   [ElementType.END]: assign({canAccept: true}), // TODO: check grid to support for multiple endings?
   [ElementType.SQUARE]: assign({canLead: true}),
-  [ElementType.BRANCH]: assign({hasChildren: true, canAccept: true}),
-  [ElementType.CONDITION]: assign({canLead: true}),
+  [ElementType.BRANCH]: assign({canAccept: true}),
+  [ElementType.CONDITION]: assign({canLead: true, sameRow: true}),
   [ElementType.ARROW]: assign({})
 }

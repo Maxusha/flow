@@ -1,0 +1,86 @@
+import { sortElementsByAppendOrder } from '@/utils/grid'
+
+describe('Sort elements', () => {
+  it('Sort 1', () => {
+    const data1 = [
+      {
+        id: 1,
+        type: 'element-end',
+        to: []
+      },
+      {
+        id: 0,
+        start: true,
+        to: [1]
+      },
+    ]
+
+    const sorted = sortElementsByAppendOrder(data1)
+    expect(sorted[0].id).toBe(0)
+    expect(sorted[1].id).toBe(1)
+  })
+
+  it('Sort 2', () => {
+    const data1 = [
+      {
+        id: 2,
+        type: 'element-end',
+        to: []
+      },
+      {
+        id: 0,
+        start: true,
+        to: [1]
+      },
+      {
+        id: 1,
+        type: 'element-dummy',
+        to: [2]
+      }
+    ]
+
+    const sorted = sortElementsByAppendOrder(data1)
+    expect(sorted[0].id).toBe(0)
+    expect(sorted[1].id).toBe(1)
+    expect(sorted[2].id).toBe(2)
+  })
+
+  it('Sort 3', () => {
+    const data1 = [
+      {
+        id: 2,
+        type: 'element-end',
+        to: []
+      },
+      {
+        id: 0,
+        start: true,
+        to: [1]
+      },
+      {
+        id: 11,
+        type: 'element-children',
+        to: [2]
+      },
+      {
+        id: 12,
+        type: 'element-children',
+        to: [2]
+      },
+      {
+        id: 1,
+        type: 'element-parent',
+        to: [11, 12]
+      },
+    ]
+
+    const sorted = sortElementsByAppendOrder(data1)
+    expect(sorted[0].id).toBe(0)
+    expect(sorted[1].id).toBe(1)
+    expect(sorted[2].id).toBe(11)
+    expect(sorted[3].id).toBe(2)
+    expect(sorted[4].id).toBe(12)
+  })
+})
+
+

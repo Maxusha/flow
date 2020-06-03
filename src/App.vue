@@ -3,7 +3,8 @@
   Flow(v-model="data", :config="config", :components="components")
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 import Flow from './components/Flow.vue'
 
 import Start from './components/element-start.vue'
@@ -12,9 +13,9 @@ import Square from './components/element-square.vue'
 import Branch from './components/element-branch.vue'
 import Condition from './components/element-condition.vue'
 import ConditionArrow from './components/element-condition-arrow.vue'
-import { data1 } from './data.js'
+import { data1 } from './data'
 
-export default {
+@Component({
   name: 'app',
   data() {
     return {
@@ -31,5 +32,6 @@ export default {
   components: {
     Flow
   }
-}
+})
+export default class App extends Vue {}
 </script>
