@@ -1,5 +1,4 @@
-import uuid from 'uuid/v1'
-import { ElementType } from './behavior.js'
+import { v4 as uuid } from 'uuid'
 
 /**
  * x and y parameters are mutable
